@@ -9,8 +9,8 @@ on:
       - main
 
 jobs:
-  setup-flutter:
-    name: Setup Flutter
+  build:
+    name: Build Flutter
     runs-on: ubuntu-latest
 
     steps:
@@ -21,22 +21,18 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           flutter-version: stable
+          channel: stable
 
-      - name: Get Flutter Dependencies
-        run: flutter pub get
+      - name: Debug Environment
+        run: |
+          flutter --version || echo "Flutter not installed"
+          echo "GITHUB_ACTION_PATH: $GITHUB_ACTION_PATH"
+          ls -la "$GITHUB_ACTION_PATH"
 
-  build-web:
-    name: Build Flutter Web
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: stable
+      - name: Force Flutter Installation
+        run: |
+          flutter precache
+          flutter doctor -v
 
       - name: Get Flutter Dependencies
         run: flutter pub get
@@ -50,22 +46,6 @@ jobs:
           name: web-build
           path: build/web
 
-  build-android:
-    name: Build Flutter Android
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: stable
-
-      - name: Get Flutter Dependencies
-        run: flutter pub get
-
       - name: Build APK
         run: flutter build apk
 
@@ -75,39 +55,23 @@ jobs:
           name: android-build
           path: build/app/outputs/flutter-apk/app-release.apk
 
-  build-desktop:
-    name: Build Flutter Desktop
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: stable
-
       - name: Enable Desktop Platforms
         run: |
           flutter config --enable-linux-desktop
           flutter config --enable-windows-desktop
           flutter config --enable-macos-desktop
 
-      - name: Get Flutter Dependencies
-        run: flutter pub get
-
       - name: Build Linux Desktop
         run: flutter build linux
-
-      - name: Build Windows Desktop
-        run: flutter build windows
 
       - name: Upload Linux Build Artifacts
         uses: actions/upload-artifact@v3
         with:
           name: linux-build
           path: build/linux
+
+      - name: Build Windows Desktop
+        run: flutter build windows
 
       - name: Upload Windows Build Artifacts
         uses: actions/upload-artifact@v3
