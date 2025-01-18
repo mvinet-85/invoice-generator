@@ -18,11 +18,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Configurer Flutter
+      # Configurer Flutter avec une version stable
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: 'stable'
+          flutter-version: '3.27.2'
+
+      # Vérifiez l'installation de Flutter
+      - name: Verify Flutter installation
+        run: flutter --version
 
       # Récupérer les dépendances
       - name: Get dependencies
