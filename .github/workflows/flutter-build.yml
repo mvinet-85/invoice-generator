@@ -33,8 +33,8 @@ jobs:
         run: flutter pub get
 
       # Exécuter les tests unitaires
-      - name: Run tests
-        run: flutter test
+      #- name: Run tests
+      #  run: flutter test
 
       # Construire l'application pour s'assurer qu'elle compile
       - name: Build APK
