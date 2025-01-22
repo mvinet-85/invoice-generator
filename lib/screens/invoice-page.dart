@@ -118,13 +118,13 @@ class InvoicePage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [UploadLogo(), InformationBox()],
+            children: [UploadLogo(), InformationBox(isRecipientBox: true)],
           ),
           const SizedBox(height: 25),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [InformationBox()],
+            children: [InformationBox(isRecipientBox: false)],
           ),
         ],
       ),

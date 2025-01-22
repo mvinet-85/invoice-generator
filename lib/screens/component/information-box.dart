@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class InformationBox extends StatelessWidget {
-  const InformationBox({super.key});
+  final bool isRecipientBox;
+
+  const InformationBox({
+    super.key,
+    required this.isRecipientBox,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,15 +23,6 @@ class InformationBox extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Facturé à :',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Colors.black26,
-              ),
-            ),
-            const SizedBox(height: 16),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -45,19 +41,21 @@ class InformationBox extends StatelessWidget {
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
                       Text(
-                        'Destinataire',
-                        style: TextStyle(
+                        isRecipientBox ? 'Destinataire' : 'Envoyeur',
+                        style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                           color: Colors.black87,
                         ),
                       ),
-                      SizedBox(height: 4),
+                      const SizedBox(height: 4),
                       Text(
-                        'Ajouter les détails du destinataire',
-                        style: TextStyle(
+                        isRecipientBox
+                            ? 'Ajouter les informations du destinataire'
+                            : 'Ajouter les informations de votre entreprise',
+                        style: const TextStyle(
                           fontSize: 14,
                           color: Colors.black54,
                         ),
