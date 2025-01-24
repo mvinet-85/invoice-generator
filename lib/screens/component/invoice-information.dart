@@ -23,7 +23,7 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
     DateTime? selectedDate = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
-      firstDate: DateTime(2000),
+      firstDate: DateTime(2024),
       lastDate: DateTime(2100),
     );
 
@@ -42,7 +42,7 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
     return SingleChildScrollView(
       child: Container(
         padding: const EdgeInsets.all(15),
-        width: MediaQuery.of(context).size.width * 0.22,
+        width: MediaQuery.of(context).size.width * 0.20,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
         child: Column(
           children: [
@@ -56,11 +56,10 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
                     fontSize: 14,
                   ),
                 ),
-                const SizedBox(width: 2),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.10,
+                  width: MediaQuery.of(context).size.width * 0.08,
                   child: TextFormField(
-                    style: const TextStyle(fontSize: 12),
+                    style: const TextStyle(fontSize: 14),
                     decoration: const InputDecoration(
                       border: UnderlineInputBorder(),
                       hintStyle: TextStyle(fontSize: 10),
@@ -69,7 +68,6 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
                 ),
               ],
             ),
-            const SizedBox(height: 8),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -80,12 +78,12 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
                     fontSize: 14,
                   ),
                 ),
-                const SizedBox(width: 2),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.10,
+                  width: MediaQuery.of(context).size.width * 0.08,
                   child: TextFormField(
                     controller: _invoiceDateController,
                     readOnly: true,
+                    style: const TextStyle(fontSize: 14),
                     decoration: const InputDecoration(
                       border: null,
                     ),
@@ -94,7 +92,6 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
                 ),
               ],
             ),
-            const SizedBox(height: 8),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -105,12 +102,12 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
                     fontSize: 14,
                   ),
                 ),
-                const SizedBox(width: 2),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.10,
+                  width: MediaQuery.of(context).size.width * 0.08,
                   child: TextFormField(
                     controller: _dueDateController,
                     readOnly: true,
+                    style: TextStyle(fontSize: 14),
                     decoration: const InputDecoration(
                       border: null,
                     ),
