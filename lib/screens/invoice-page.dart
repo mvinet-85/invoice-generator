@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:invoice/screens/component/information-box.dart';
+import 'package:invoice/screens/component/invoice-information.dart';
 import 'package:invoice/screens/component/upload-logo.dart';
 
 class InvoicePage extends StatelessWidget {
@@ -124,7 +125,10 @@ class InvoicePage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [InformationBox(isRecipientBox: false)],
+            children: [
+              InformationBox(isRecipientBox: false),
+              InvoiceInformation()
+            ],
           ),
         ],
       ),
