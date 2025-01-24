@@ -61,7 +61,7 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
                   child: TextFormField(
                     style: const TextStyle(fontSize: 14),
                     decoration: const InputDecoration(
-                      border: UnderlineInputBorder(),
+                      border: InputBorder.none,
                       hintStyle: TextStyle(fontSize: 10),
                     ),
                   ),
@@ -85,7 +85,7 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
                     readOnly: true,
                     style: const TextStyle(fontSize: 14),
                     decoration: const InputDecoration(
-                      border: null,
+                      border: InputBorder.none,
                     ),
                     onTap: () => _selectDate(context, _invoiceDateController),
                   ),
@@ -107,9 +107,9 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
                   child: TextFormField(
                     controller: _dueDateController,
                     readOnly: true,
-                    style: TextStyle(fontSize: 14),
+                    style: const TextStyle(fontSize: 14),
                     decoration: const InputDecoration(
-                      border: null,
+                      border: InputBorder.none,
                     ),
                     onTap: () => _selectDate(context, _dueDateController),
                   ),
