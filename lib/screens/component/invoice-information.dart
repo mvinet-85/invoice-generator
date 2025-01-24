@@ -1,3 +1,4 @@
+import 'package:date_field/date_field.dart';
 import 'package:flutter/material.dart';
 
 class InvoiceInformation extends StatelessWidget {
@@ -21,22 +22,17 @@ class InvoiceInformation extends StatelessWidget {
                   Text(
                     'Numéro de facture :',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 14,
                     ),
                   ),
                   SizedBox(width: 2),
                   // Espacement horizontal entre le texte et l'input
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.10,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.grey.shade50,
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                      ),
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                          border: UnderlineInputBorder(),
+                          hintText: "Renseigner le numéro de facture"),
                     ),
                   ),
                 ],
@@ -48,24 +44,18 @@ class InvoiceInformation extends StatelessWidget {
                   Text(
                     'Date de la facture :',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 14,
                     ),
                   ),
                   SizedBox(width: 2),
                   // Espacement horizontal entre le texte et l'input
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.10,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.grey.shade50,
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                      ),
-                    ),
-                  ),
+                      width: MediaQuery.of(context).size.width * 0.10,
+                      child: DateTimeFormField(
+                        decoration: const InputDecoration(
+                            border: UnderlineInputBorder(),
+                            hintText: "Selectionner la date de la facture"),
+                      )),
                 ],
               ),
               Row(
@@ -75,24 +65,18 @@ class InvoiceInformation extends StatelessWidget {
                   Text(
                     "Date d'échéance :",
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 14,
                     ),
                   ),
                   SizedBox(width: 2),
                   // Espacement horizontal entre le texte et l'input
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.10,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.grey.shade50,
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                      ),
-                    ),
-                  ),
+                      width: MediaQuery.of(context).size.width * 0.10,
+                      child: DateTimeFormField(
+                        decoration: const InputDecoration(
+                            border: UnderlineInputBorder(),
+                            hintText: "Selectionner la date d'échéance"),
+                      )),
                 ],
               ),
             ],
