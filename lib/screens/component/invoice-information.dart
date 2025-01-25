@@ -61,13 +61,13 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
                   height: 28,
                   child: TextFormField(
                     style: const TextStyle(fontSize: 14),
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                         border: InputBorder.none,
-                        contentPadding:
-                            EdgeInsets.symmetric(vertical: 17, horizontal: 6),
-                        hintStyle: TextStyle(fontSize: 10),
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 17, horizontal: 6),
+                        hintStyle: const TextStyle(fontSize: 10),
                         filled: true,
-                        fillColor: Colors.black12),
+                        fillColor: Colors.grey[50]),
                   ),
                 ),
               ],
@@ -80,7 +80,7 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
-                  'Date de la facture :',
+                  'Date de facturation :',
                   style: TextStyle(
                     fontSize: 14,
                   ),
@@ -92,12 +92,12 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
                     controller: _invoiceDateController,
                     readOnly: true,
                     style: const TextStyle(fontSize: 14),
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                         border: InputBorder.none,
-                        contentPadding:
-                            EdgeInsets.symmetric(vertical: 17, horizontal: 6),
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 17, horizontal: 6),
                         filled: true,
-                        fillColor: Colors.black12),
+                        fillColor: Colors.grey[50]),
                     onTap: () => _selectDate(context, _invoiceDateController),
                   ),
                 ),
@@ -111,7 +111,7 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
-                  "Date d'échéance :",
+                  "A régler avant :",
                   style: TextStyle(
                     fontSize: 14,
                   ),
@@ -123,12 +123,12 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
                     controller: _dueDateController,
                     readOnly: true,
                     style: const TextStyle(fontSize: 14),
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       border: InputBorder.none,
                       contentPadding:
                           EdgeInsets.symmetric(vertical: 17, horizontal: 6),
                       filled: true,
-                      fillColor: Colors.black12,
+                      fillColor: Colors.grey[50],
                     ),
                     onTap: () => _selectDate(context, _dueDateController),
                   ),
