@@ -40,10 +40,8 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Container(
-        padding: const EdgeInsets.all(15),
+      child: SizedBox(
         width: MediaQuery.of(context).size.width * 0.20,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
         child: Column(
           children: [
             Row(
