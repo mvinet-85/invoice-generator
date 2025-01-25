@@ -63,6 +63,8 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
                     style: const TextStyle(fontSize: 14),
                     decoration: const InputDecoration(
                         border: InputBorder.none,
+                        contentPadding:
+                            EdgeInsets.symmetric(vertical: 17, horizontal: 6),
                         hintStyle: TextStyle(fontSize: 10),
                         filled: true,
                         fillColor: Colors.black12),
@@ -92,6 +94,8 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
                     style: const TextStyle(fontSize: 14),
                     decoration: const InputDecoration(
                         border: InputBorder.none,
+                        contentPadding:
+                            EdgeInsets.symmetric(vertical: 17, horizontal: 6),
                         filled: true,
                         fillColor: Colors.black12),
                     onTap: () => _selectDate(context, _invoiceDateController),
@@ -120,11 +124,12 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
                     readOnly: true,
                     style: const TextStyle(fontSize: 14),
                     decoration: const InputDecoration(
-                        border: InputBorder.none,
-                        contentPadding:
-                            EdgeInsets.symmetric(vertical: 0, horizontal: 0),
-                        filled: true,
-                        fillColor: Colors.black12),
+                      border: InputBorder.none,
+                      contentPadding:
+                          EdgeInsets.symmetric(vertical: 17, horizontal: 6),
+                      filled: true,
+                      fillColor: Colors.black12,
+                    ),
                     onTap: () => _selectDate(context, _dueDateController),
                   ),
                 ),
