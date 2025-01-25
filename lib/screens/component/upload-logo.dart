@@ -40,17 +40,17 @@ class _UploadLogoState extends State<UploadLogo> {
       child: InkWell(
         onTap: _pickImage,
         child: _imageBytes != null || _imageFile != null
-            ? Container(
-                padding: const EdgeInsets.all(15),
+            ? SizedBox(
                 width: MediaQuery.of(context).size.width * 0.10,
+                height: 96,
                 child: _imageBytes != null
                     ? Image.memory(
                         _imageBytes!,
-                        fit: BoxFit.cover,
+                        fit: BoxFit.contain,
                       )
                     : Image.file(
                         _imageFile!,
-                        fit: BoxFit.cover,
+                        fit: BoxFit.contain,
                       ),
               )
             : Container(
