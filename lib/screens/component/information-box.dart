@@ -17,6 +17,12 @@ class InformationBox extends StatelessWidget {
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
+                titlePadding:
+                    const EdgeInsets.symmetric(vertical: 40, horizontal: 50),
+                contentPadding:
+                    const EdgeInsets.symmetric(vertical: 0, horizontal: 50),
+                actionsPadding:
+                    const EdgeInsets.symmetric(vertical: 40, horizontal: 50),
                 title: Text(isRecipientBox
                     ? 'Destinataire de la facture'
                     : 'Expéditeur de facture'),
@@ -97,12 +103,9 @@ class InformationBox extends StatelessWidget {
                         Row(
                           children: [
                             Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.only(right: 10.0),
-                                child: TextFormField(
-                                  decoration:
-                                      InputDecoration(labelText: 'Adresse'),
-                                ),
+                              child: TextFormField(
+                                decoration:
+                                    InputDecoration(labelText: 'Adresse'),
                               ),
                             ),
                           ],
