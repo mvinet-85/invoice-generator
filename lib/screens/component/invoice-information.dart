@@ -58,15 +58,20 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
                 ),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.08,
+                  height: 28,
                   child: TextFormField(
                     style: const TextStyle(fontSize: 14),
                     decoration: const InputDecoration(
-                      border: InputBorder.none,
-                      hintStyle: TextStyle(fontSize: 10),
-                    ),
+                        border: InputBorder.none,
+                        hintStyle: TextStyle(fontSize: 10),
+                        filled: true,
+                        fillColor: Colors.black12),
                   ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: 2,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -80,17 +85,22 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
                 ),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.08,
+                  height: 28,
                   child: TextFormField(
                     controller: _invoiceDateController,
                     readOnly: true,
                     style: const TextStyle(fontSize: 14),
                     decoration: const InputDecoration(
-                      border: InputBorder.none,
-                    ),
+                        border: InputBorder.none,
+                        filled: true,
+                        fillColor: Colors.black12),
                     onTap: () => _selectDate(context, _invoiceDateController),
                   ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: 2,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -104,13 +114,17 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
                 ),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.08,
+                  height: 28,
                   child: TextFormField(
                     controller: _dueDateController,
                     readOnly: true,
                     style: const TextStyle(fontSize: 14),
                     decoration: const InputDecoration(
-                      border: InputBorder.none,
-                    ),
+                        border: InputBorder.none,
+                        contentPadding:
+                            EdgeInsets.symmetric(vertical: 0, horizontal: 0),
+                        filled: true,
+                        fillColor: Colors.black12),
                     onTap: () => _selectDate(context, _dueDateController),
                   ),
                 ),
