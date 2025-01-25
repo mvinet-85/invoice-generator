@@ -25,7 +25,7 @@ class InformationBox extends StatelessWidget {
                     const EdgeInsets.symmetric(vertical: 40, horizontal: 50),
                 title: Text(isRecipientBox
                     ? 'Destinataire de la facture'
-                    : 'Expéditeur de facture'),
+                    : 'Expéditeur de la facture'),
                 content: Container(
                   width: MediaQuery.of(context).size.width * 0.35,
                   child: SingleChildScrollView(
