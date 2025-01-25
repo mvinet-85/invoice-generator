@@ -48,13 +48,16 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
           children: [
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 const Text(
                   'Numéro de facture :',
                   style: TextStyle(
                     fontSize: 14,
                   ),
+                ),
+                SizedBox(
+                  width: 4,
                 ),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.08,
@@ -77,13 +80,16 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 const Text(
                   'Date de facturation :',
                   style: TextStyle(
                     fontSize: 14,
                   ),
+                ),
+                SizedBox(
+                  width: 4,
                 ),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.08,
@@ -108,13 +114,16 @@ class _InvoiceInformationState extends State<InvoiceInformation> {
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 const Text(
                   "A régler avant :",
                   style: TextStyle(
                     fontSize: 14,
                   ),
+                ),
+                SizedBox(
+                  width: 4,
                 ),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.08,
