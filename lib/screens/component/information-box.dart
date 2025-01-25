@@ -20,36 +20,95 @@ class InformationBox extends StatelessWidget {
                 title: Text(isRecipientBox
                     ? 'Destinataire de la facture'
                     : 'Expéditeur de facture'),
-                content: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      TextFormField(
-                        decoration:
-                            InputDecoration(labelText: "Nom de l'entreprise"),
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(labelText: 'Email'),
-                      ),
-                      TextFormField(
-                        decoration:
-                            InputDecoration(labelText: 'Numéro de téléphone'),
-                        keyboardType: TextInputType.phone,
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(labelText: 'Adresse'),
-                        keyboardType: TextInputType.emailAddress,
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(labelText: 'Ville'),
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(labelText: 'Code Postal'),
-                        keyboardType: TextInputType.number,
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(labelText: 'Pays'),
-                      ),
-                    ],
+                content: Container(
+                  width: MediaQuery.of(context).size.width * 0.35,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 10.0),
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                    labelText: "Nom de l'entreprise",
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 10.0),
+                                child: TextFormField(
+                                  decoration:
+                                      InputDecoration(labelText: 'Email'),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 10.0),
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                      labelText: 'Numéro de téléphone'),
+                                  keyboardType: TextInputType.phone,
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 10.0),
+                                child: TextFormField(
+                                  decoration:
+                                      InputDecoration(labelText: 'Pays'),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 10.0),
+                                child: TextFormField(
+                                  decoration:
+                                      InputDecoration(labelText: 'Ville'),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 10.0),
+                                child: TextFormField(
+                                  decoration:
+                                      InputDecoration(labelText: 'Code Postal'),
+                                  keyboardType: TextInputType.number,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 10.0),
+                                child: TextFormField(
+                                  decoration:
+                                      InputDecoration(labelText: 'Adresse'),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 actions: [
