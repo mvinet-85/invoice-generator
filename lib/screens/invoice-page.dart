@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:invoice/screens/component/data-table.dart';
 import 'package:invoice/screens/component/information-box.dart';
 import 'package:invoice/screens/component/invoice-information.dart';
+import 'package:invoice/screens/component/table.dart';
 import 'package:invoice/screens/component/upload-logo.dart';
 
 class InvoicePage extends StatelessWidget {
