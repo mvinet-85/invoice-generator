@@ -20,7 +20,38 @@ class InformationBox extends StatelessWidget {
                 title: Text(isRecipientBox
                     ? 'Destinataire de la facture'
                     : 'Expéditeur de facture'),
-                content: Text(isRecipientBox ? '' : ''),
+                content: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        decoration:
+                            InputDecoration(labelText: "Nom de l'entreprise"),
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(labelText: 'Email'),
+                      ),
+                      TextFormField(
+                        decoration:
+                            InputDecoration(labelText: 'Numéro de téléphone'),
+                        keyboardType: TextInputType.phone,
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(labelText: 'Adresse'),
+                        keyboardType: TextInputType.emailAddress,
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(labelText: 'Ville'),
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(labelText: 'Code Postal'),
+                        keyboardType: TextInputType.number,
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(labelText: 'Pays'),
+                      ),
+                    ],
+                  ),
+                ),
                 actions: [
                   Row(
                     children: [
