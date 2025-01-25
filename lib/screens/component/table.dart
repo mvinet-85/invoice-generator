@@ -8,85 +8,112 @@ class ItemTable extends StatelessWidget {
     return Center(
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        child: DataTable(
-          border: TableBorder.all(
-            color: Colors.transparent,
-            width: 0.5,
-          ),
-          columnSpacing: 20,
-          headingRowColor: WidgetStateProperty.resolveWith(
-            (states) => Colors.lightBlue.shade50,
-          ),
-          dataRowColor: WidgetStateProperty.resolveWith(
-            (states) => Colors.grey.shade50,
-          ),
-          headingTextStyle: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 14,
-            color: Colors.black,
-          ),
-          dataTextStyle: const TextStyle(
-            fontSize: 12,
-            color: Colors.black87,
-          ),
-          columns: [
-            DataColumn(
-              label: SizedBox(
-                width: MediaQuery.of(context).size.width * 0.26,
-                child: const Text(
-                  'Description',
+        child: Column(
+          children: [
+            DataTable(
+              border: TableBorder.all(
+                color: Colors.transparent,
+                width: 0.5,
+              ),
+              columnSpacing: 20,
+              headingRowColor: WidgetStateProperty.resolveWith(
+                (states) => Colors.lightBlue.shade50,
+              ),
+              dataRowColor: WidgetStateProperty.resolveWith(
+                (states) => Colors.grey.shade50,
+              ),
+              headingTextStyle: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                color: Colors.black,
+              ),
+              dataTextStyle: const TextStyle(
+                fontSize: 12,
+                color: Colors.black87,
+              ),
+              columns: [
+                DataColumn(
+                  label: SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.26,
+                    child: const Text(
+                      'Description',
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            const DataColumn(
-              label: Text(
-                'Quantité',
-              ),
-            ),
-            const DataColumn(
-              label: Text(
-                'Prix unitaire',
-              ),
-            ),
-            const DataColumn(
-              label: Text(
-                'Montant total',
-              ),
-            ),
-            const DataColumn(
-              label: Text(
-                'TVA',
-              ),
-            ),
-          ],
-          rows: const <DataRow>[
-            DataRow(
-              cells: <DataCell>[
-                DataCell(Text('Produit A')),
-                DataCell(Text('10')),
-                DataCell(Text('15.00 €')),
-                DataCell(Text('150.00 €')),
-                DataCell(Text('20%')),
+                const DataColumn(
+                  label: Text(
+                    'Quantité',
+                  ),
+                ),
+                const DataColumn(
+                  label: Text(
+                    'Prix unitaire',
+                  ),
+                ),
+                const DataColumn(
+                  label: Text(
+                    'Montant total',
+                  ),
+                ),
+                const DataColumn(
+                  label: Text(
+                    'TVA',
+                  ),
+                ),
+              ],
+              rows: const <DataRow>[
+                DataRow(
+                  cells: <DataCell>[
+                    DataCell(Text('Produit A')),
+                    DataCell(Text('10')),
+                    DataCell(Text('15.00 €')),
+                    DataCell(Text('150.00 €')),
+                    DataCell(Text('20%')),
+                  ],
+                ),
+                DataRow(
+                  cells: <DataCell>[
+                    DataCell(Text('Produit B')),
+                    DataCell(Text('5')),
+                    DataCell(Text('30.00 €')),
+                    DataCell(Text('150.00 €')),
+                    DataCell(Text('10%')),
+                  ],
+                ),
+                DataRow(
+                  cells: <DataCell>[
+                    DataCell(Text('Produit C')),
+                    DataCell(Text('8')),
+                    DataCell(Text('12.50 €')),
+                    DataCell(Text('100.00 €')),
+                    DataCell(Text('5%')),
+                  ],
+                ),
               ],
             ),
-            DataRow(
-              cells: <DataCell>[
-                DataCell(Text('Produit B')),
-                DataCell(Text('5')),
-                DataCell(Text('30.00 €')),
-                DataCell(Text('150.00 €')),
-                DataCell(Text('10%')),
-              ],
+            SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue.shade700,
+                  foregroundColor: Colors.white,
+                  padding: EdgeInsets.all(20)),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Text(
+                    'Ajouter une nouvelle ligne',
+                    style: TextStyle(fontSize: 14),
+                  ),
+                  SizedBox(width: 8),
+                  Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ),
+                ],
+              ),
             ),
-            DataRow(
-              cells: <DataCell>[
-                DataCell(Text('Produit C')),
-                DataCell(Text('8')),
-                DataCell(Text('12.50 €')),
-                DataCell(Text('100.00 €')),
-                DataCell(Text('5%')),
-              ],
-            ),
+            SizedBox(height: 50),
           ],
         ),
       ),
