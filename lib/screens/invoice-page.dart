@@ -71,7 +71,7 @@ class InvoicePage extends StatelessWidget {
                     children: [
                       // Header
                       _header(),
-                      const SizedBox(height: 50),
+                      const SizedBox(height: 30),
                       ItemTable()
                     ],
                   ),
